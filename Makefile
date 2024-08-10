@@ -6,6 +6,7 @@ all: raytraycer
 
 raytraycer: main.c utility.o vec3.o world.o camera.o rendering.o
 	$(CC) $(CFLAGS) $^ -lm -o $@
+	-mkdir -p build
 	mv *.o $@ build/
 
 camera.o: camera.h utility.h vec3.h
